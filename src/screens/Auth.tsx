@@ -17,7 +17,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '100vh',
+        height: '100vh',
         width: '100vw',
         background: '#121212',
         overflowY: 'hidden',
@@ -30,7 +30,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'flex-start',
           padding: '2rem',
           boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.5)',
           borderRadius: '12px',
@@ -43,7 +43,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
           margin: 'auto',
           width: '100%',
           boxSizing: 'border-box',
-          overflowY: 'hidden',
+          overflowY: 'auto',
         }}
       >
         <Box
@@ -74,7 +74,9 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
             <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'rgba(255, 255, 255, 0.5)', margin: '0 4px' }} />
           </Box>
         </Box>
-        {children}
+        <Box sx={{ flexGrow: 1 }}>
+          {children}
+        </Box>
       </Container>
     </Box>
   );

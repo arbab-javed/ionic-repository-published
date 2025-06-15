@@ -22,12 +22,17 @@ a:hover {
   color: #535bf2;
 }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  overflow: hidden; /* Strictly prevent scrolling on the HTML/body */
+  box-sizing: border-box;
+}
+
+body {
+  /* Removed display: flex and place-items: center as it can cause overflow issues with full-height layouts */
+  /* Removed min-width: 320px; min-height: 100vh; as height: 100% and AuthLayout's minHeight handle this */
+  background-color: #121212; /* Set background here to ensure consistent dark mode */
 }
 
 h1 {
